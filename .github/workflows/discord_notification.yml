@@ -1,12 +1,17 @@
+name: Discord Notification
+
 on:
   workflow_dispatch:
+  # You can add other triggers here if you want, for example:
+  # push:
+  #   branches: [ main ]
 
 jobs:
-  message:
+  notify:
     runs-on: ubuntu-latest
     steps:
     - name: Discord Webhook Action
       uses: tsickert/discord-webhook@v5.3.0
       with:
         webhook-url: ${{ secrets.WEBHOOK_URL }}
-        content: "There's a new updated which has been pushed on your GitHub!"
+        content: "There's a new update which has been pushed on your GitHub!"
