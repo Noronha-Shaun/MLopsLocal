@@ -8,8 +8,6 @@ translator = pipeline("translation", model="google-t5/t5-base")
 # Define available languages
 AVAILABLE_LANGUAGES = ["French", "German", "Romanian"]
 
-print "Hello"
-
 def translate(input_text, target_language):
     target_language = target_language.lower()
     
