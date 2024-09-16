@@ -1,5 +1,5 @@
 import pytest
-from speech_translation_app import translate
+from app import translate
 
 def test_translation_to_french():
     result = translate("Hello", "French")
