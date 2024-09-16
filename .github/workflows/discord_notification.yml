@@ -1,11 +1,9 @@
 name: Discord Notification
 
 on:
-  workflow_run:
-    workflows: ["main"]
-    types:
-      - completed
-  workflow_dispatch:  
+  workflow_dispatch:
+  push:
+    branches: [ main ]
 
 jobs:
   notify:
@@ -15,4 +13,4 @@ jobs:
       uses: tsickert/discord-webhook@v5.3.0
       with:
         webhook-url: ${{ secrets.WEBHOOK_URL }}
-        content: "There has been a new update on your GitHub repository!"
+        content: "There's a new update in your GitHub repository!"
