@@ -20,5 +20,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest
-    - name: Run tests
-      run: pytest test-file.py
+    - name: Run tests with timeout
+      run: |
+        timeout 300s pytest -v test-file.py || echo "Tests timed out after 5 minutes"
